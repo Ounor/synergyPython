@@ -42,12 +42,15 @@ A = int(input("Введите сумму, которую готов вложит
 B = int(input("Введите сумму, которую готов вложить Иван: "))
 
 if A >= X and B >= X:
-    print("2")
+    print(2)
 elif A >= X:
     print("Mike")
 elif B >= X:
     print("Ivan")
-elif A + B >= 2*X:
-    print("1")
+elif A + B >= X:
+    print(1)
 else:
-    print("0")
+    print(0)
+
+
+
