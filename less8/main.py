@@ -9,30 +9,38 @@ for num in reversed_numbers:
     print(num)
     
 #2
-N = int(input())
-array = list(map(int, input().split()))
+def shift_array_right(arr):
+    last_element = arr.pop()
+    arr.insert(0, last_element)
 
-reversed_array = array[::-1]
-for num in reversed_array:
-    print(num)
+arr = [1,2,3,4,5]
+
+shift_array_right(arr)
+
 #3
 
+# Сколко кг переносит одна лодка
 m = int(input())
+# Кол-во рыбаков
 n = int(input())
 
+# Веса рыбаков
 weights = []
-for _ in range(n):
-    weights.append(int(input()))
 
-weights.sort(reverse=True)
+for _ in range(n):
+    weight = int(input())
+    weights.append(weight)
+
+weights.sort()
 
 boats = 0
-i = 0
-while i < n:
-    if weights[i] <= m:
-        i += 1
-    else:
-        i += 2
+left = 0
+right = n - 1
+
+while left <= right:
+    if weights[left] + weights[right] <= m:
+        left += 1
+    right -= 1
     boats += 1
 
 print(boats)
