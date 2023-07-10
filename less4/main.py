@@ -9,19 +9,14 @@ print("Площадь прямоугольника:", area)
 print("Периметр прямоугольника:", perimeter)
 
 # Task 2
-num = int(input("Введите пятизначное целое число: "))
+number = int(input("Введите пятизначное целое число: "))
 
-units = num % 10
-tens = (num // 10) % 10
+units = number % 10
+tens = (number // 10) % 10
+hundreds = (number // 100) % 10
+thousands = (number // 1000) % 10
+ten_thousands = (number // 10000) % 10
 
-exp = tens ** units
+result = (tens ** units) * hundreds / (ten_thousands - thousands)
 
-hundreds = (num // 100) % 10
-result = exp * hundreds
-
-thousands = (num // 1000) % 10
-diff = tens * 10 + units - thousands * 1000
-
-final_result = result / diff
-
-print(final_result)
+print(result)
